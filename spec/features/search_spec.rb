@@ -3,20 +3,20 @@ require 'rails_helper'
 RSpec.describe 'User can search for food item', type: :feature do
   describe 'When user visits "/"' do
       it 'can show index page for search results' do
-        visit root_path
-        fill_in :q, with: "sweet potatoes"
-        click_on "Search"
+          visit root_path
+          fill_in :q, with: "sweet potatoes"
+          click_on "Search"
 
-        expect(page.status_code).to eq 200
-        expect(current_path).to eq(foods_path)
+          expect(page.status_code).to eq 200
+          expect(current_path).to eq(foods_path)
 
-        
-        
-        
-      
+          expect(page).to have_css(".code", count: 50)
+          expect(page).to have_css(".description", count: 50)
+          expect(page).to have_css(".brand_owner", count: 50)
+          expect(page).to have_css(".ingredients", count: 50)
+        end
       end
     end
-  end
 
 # As a user,
 # When I visit "/"
