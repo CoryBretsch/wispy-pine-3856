@@ -2,29 +2,21 @@ require 'rails_helper'
 
 RSpec.describe 'User can search for food item', type: :feature do
   describe 'When user visits "/"' do
-      it 'should have a button to Discover Top Rated Movies' do
+      it 'can show index page for search results' do
         visit root_path
-        save_and_open_page
         fill_in :q, with: "sweet potatoes"
         click_on "Search"
 
         expect(page.status_code).to eq 200
         expect(current_path).to eq(foods_path)
+
+        
         
         
       
       end
     end
   end
-
-
-
-
-
-
-
-
-
 
 # As a user,
 # When I visit "/"

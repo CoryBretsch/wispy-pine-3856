@@ -1,2 +1,7 @@
-<h1>Food!</h1>
-
+<h1><%= @foods_details.count %> Results </h1>
+<% @foods_details.each do |food| %>
+    <li class="code">Code: <%= food.code %></li>
+    <li class="description">Description: <%= food.description %></li>
+    <li class="brand_owner">Brand Owner: <%= food.brand_owner %></li>
+    <li class="ingredients">Ingredients: <%= food.ingredients %></li>
+<% end %>
